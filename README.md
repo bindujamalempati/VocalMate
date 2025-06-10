@@ -27,20 +27,7 @@ VocalMate is a voice-enabled task manager powered by GPT that helps users:
 | 🗓️ Calendar Sync             | Optionally syncs user-approved tasks with Google Calendar via OAuth |
 | 📁 Offline Storage            | Stores tasks locally in JSON or SQLite                              |
 
----
 
-## 🚀 Architecture
-
-```mermaid
-flowchart TD
-    A[Text/Voice Input] --> B[Speech-to-Text (if audio)]
-    B --> C[OpenAI GPT Task Parser]
-    C --> D[Categorizer + Validator]
-    D --> E[Display on Streamlit UI]
-    E --> F[Google Calendar Sync]
-    D --> G[Daily Digest Summary]
-    D --> H[Local DB/JSON Storage]
-```
 
 ---
 
