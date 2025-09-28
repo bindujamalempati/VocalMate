@@ -1,94 +1,54 @@
-# VocalMate – AI Task Assistant
+# 🎙️ VocalMate – Voice-Enabled Task Manager
 
-> Your intelligent voice+text assistant for smart task management, scheduling, and calendar integration.
-
----
-
-## 🌟 Overview
-
-VocalMate is a voice-enabled task manager powered by GPT that helps users:
-
-* ✍️ Add tasks via voice or text
-* 🔍 Parse vague instructions (e.g., "meeting next Wed 3pm")
-* 🔔 Generate smart daily digests
-* 🌐 Transcribe uploaded audio meetings (e.g., .mp3)
-* 🗓️ Sync select tasks with Google Calendar
+> A multimodal productivity app that captures tasks via live speech or audio uploads, and syncs seamlessly with Google Calendar for real-time scheduling.
 
 ---
 
-## 🔧 Features
+## 🚀 Features
 
-| Feature                       | Description                                                         |
-| ----------------------------- | ------------------------------------------------------------------- |
-| 🌐 Voice Input + Audio Upload | Accepts direct voice or .mp3/.wav file uploads                      |
-| 🤖 GPT Task Parsing           | Converts natural language into structured task objects              |
-| ⚖️ Auto Categorization        | Classifies tasks as `Work`, `Personal`, etc.                        |
-| ⏰ Smart Digest                | Summarizes the user's day with categorized task insights            |
-| 🗓️ Calendar Sync             | Optionally syncs user-approved tasks with Google Calendar via OAuth |
-| 📁 Offline Storage            | Stores tasks locally in JSON or SQLite                              |
-
-
+- 🎤 **Voice Capture**: Add tasks using live speech or upload audio files.  
+- 📝 **Speech-to-Text Pipeline**: Uses robust transcription models for accurate task capture.  
+- 📅 **Calendar Integration**: Syncs tasks automatically with **Google Calendar API**.  
+- ⚡ **Real-Time Scheduling**: Updates reflect instantly across your calendar.  
+- 📊 **Dashboard View**: Visualize and manage tasks interactively.  
 
 ---
 
-## 📚 Tech Stack
+## 🛠 Tech Stack
 
-| Purpose            | Tools / Libraries                   |
-| ------------------ | ----------------------------------- |
-| UI                 | Streamlit                           |
-| NLP + Task Parsing | OpenAI GPT (or Claude)              |
-| Audio Input        | `speech_recognition`, `pydub`       |
-| Audio File Support | `.mp3`, `.wav`, via `tempfile`      |
-| Calendar API       | Google Calendar API + `google-auth` |
-| Task Storage       | JSON or SQLite                      |
+- **Frontend/UI**: Streamlit  
+- **Backend**: Python  
+- **APIs**: Google Calendar API  
+- **Libraries**: SpeechRecognition, PyDub, NumPy, Pandas  
 
 ---
 
-## ♻️ Setup Instructions
+## 📦 Setup & Installation
 
 ```bash
-# 1. Clone this repo
-$ git clone https://github.com/your-username/vocalmate
-$ cd vocalmate
+git clone https://github.com/bindujamalempati/VocalMate.git
+cd VocalMate
+pip install -r requirements.txt
+Create a .env file with:
 
-# 2. Install dependencies
-$ pip install -r requirements.txt
+ini
+Copy code
+GOOGLE_CLIENT_ID=your_id
+GOOGLE_CLIENT_SECRET=your_secret
+GOOGLE_CALENDAR_API_KEY=your_key
+🎯 Usage
+Run locally:
 
-# 3. Add your OpenAI + Google API credentials
-- Place `credentials.json` (Google OAuth) in root
-- Set your `OPENAI_API_KEY` in a `.env` file or environment
+bash
+Copy code
+streamlit run app.py
+Speak directly into your mic or upload .wav/.mp3 files.
 
-# 4. Run locally
-$ streamlit run app.py
-```
+Confirm transcription → task added to Google Calendar.
 
----
+📊 Example
+Input (Speech)	Transcribed Text	Action
+“Meeting with John at 5 PM”	Meeting with John at 5 PM	Added to Calendar ✅
 
-## 🎥 Demo Video
-
----
-
-## 🌐 Live App (Optional)
-
-Deploy your app on [Streamlit Cloud](https://streamlit.io/cloud), [Render](https://render.com), or [Hugging Face Spaces](https://huggingface.co/spaces)
-
----
-
-## ✨ Future Improvements
-
-* Integrate proactive reminders with alerts
-* Auto-detect recurring tasks and conflicts
-* Slack/Discord bot version
-* Public transcription and summarization API
-
----
-
-## 🙏 Acknowledgments
-
-Built with OpenAI, Google Cloud, and lots of late-night debugging.
-
----
-
-## 📄 License
-
-MIT License. Feel free to fork and improve!
+📄 License
+MIT License.
